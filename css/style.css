@@ -1,0 +1,501 @@
+body {
+    background-color: blueviolet;
+    background-image: url(../img/plano_de_fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: antiga;
+    font-weight: bold;
+    border-style: double;
+}
+
+@font-face {
+    font-family: antiga;
+    src: url(../fonts/Dreamsoftheatre-5Vja.ttf);
+  }
+
+  :root{
+    --borda_color:rgb(83, 50, 50);
+  }
+input {
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+}
+/* Dados */
+
+.dice {
+    height: 20vw;
+    width: 20vw;
+    cursor: pointer;
+}
+
+.dados {
+    margin-top: 40vw;
+    display: inline-flex;
+}
+
+.dice_text {
+    background-color: transparent;
+    color: #0c3537;
+    position: relative;
+    bottom: 13.9vw;
+    left: 7.7vw;
+    height: 4.5vw;
+    width: 4.4vw;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0s;
+}
+
+.dice_rolling {
+    position: relative;
+    z-index: 4;
+    bottom: 6.75vw;
+    left: 0vw;
+    height: 2.3vw;
+    width: 2.3vw;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.d6r {
+    top: 62vw;
+}
+
+#d20 {
+    transition: 0.7s;
+    width: 20vw;
+}
+
+.rotation {
+    animation: rotation 2s infinite linear;
+}
+
+.labeld {
+    position: absolute;
+    background-size: 15vw;
+    margin-top: -20vw;
+    background-image: url(../img/d20label.png);
+    width: 25vw;
+    height: 25vw;
+    background-size: 20vw;
+    cursor: pointer;
+    transition: 0.01s;
+    background-repeat: no-repeat;
+}
+
+.ativado {
+    background-image: url(../img/d20labeloN.png) !important;
+    background-size: 20vw;
+}
+
+#d20Body {
+    border: black double 0.1vw;
+    width: 35vw;
+}
+
+#d6Body {
+    border: black double 0.1vw;
+    width: 35vw;
+}
+
+#N_personalizado{
+    position:absolute;
+    width: 2.2vw;
+    height: 1.5vw;
+    background-color: white;
+    bottom: -73.21vw;
+    right: 51.4vw;
+    transform: rotate(34deg);
+    border: none;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    font-size: large;
+}
+
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+
+/* MODIFICADORES E STATUS */
+#status{
+    border: .4vw double var(--borda_color);
+    border-style: double;
+    width: 33.8vw;
+    height: 55vw;
+}
+
+.statusBase{
+    border: .1vw double black;
+    width: 10vw;
+    height: 55vw;
+}
+
+.statusI{
+    margin-bottom: 2.5vw;
+    width: 6vw;
+    height: 6vw;
+    margin-left: 2vw;
+}
+
+.modifier {
+    background-color: rgb(255, 255, 255);
+    width: 5vw;
+    height: 4vw;
+    border-radius: 100%;
+    border: black .2vw double;
+    border-bottom: transparent;
+    text-align: center;
+    padding-top: 1vw;
+    font-size: xx-large;
+}
+
+#estrela {
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+    bottom: 3.6vw;
+    left: 1.1vw;
+}
+
+.statusSlt {
+    position: relative;
+    width: 2vw;
+    height: 0.9vw;
+    top: 8vw;
+    left: -1.1vw;
+    font-size: xx-small;
+    z-index: 2;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.statusAdc {
+    position: relative;
+    width: 2.5vw;
+    height: 1vw;
+    border-radius: 100%;
+    top: 3.5vw;
+    left: 1.2vw;
+    font-size: xx-small;
+    z-index: 2;
+    text-align: center;
+    outline: none;
+}
+
+#label_area{
+    position: relative;
+    width: 7vw;
+    text-align: center;
+    left: -.6vw;
+    bottom: 4vw;
+    font-size: 1vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* -----------------------TOTAIS----------------------- */
+.resultadofinaldostatu {
+    position: relative;
+    left: 1vw;
+    width: 19vw;
+    height: 1vw;
+    display: inline-flex;
+    margin-right: 1vw !important;
+    margin-top: 0.5vw;
+}
+
+#proficiência{
+    width: 8vw !important;
+    height: 2vw !important;
+    margin-left: 10vw;
+}
+
+.statuFinal{
+    position: relative;
+    width: 3vw;
+    height: 1vw;
+    border-bottom: .1vw double var(--borda_color);
+    top: -1.2vw;
+    left: 0.5vw;
+    text-align: center;
+}
+
+.statusLabelF{
+    position: relative;
+    width: 3vw;
+    height: 1vw;
+    top: -1vw;
+    left: 1.5vw;
+}
+
+.buttonDice {
+    position: relative;
+    width: 1vw;
+    height: 1vw;
+    color: rgb(130, 4, 4);
+    cursor: pointer;
+    left: 4vw;
+    bottom: 1.1vw;
+}
+
+.buttonDice:hover{
+    transition: 0.2s;
+    color: rgb(226, 0, 68);
+    transform: scale(1.1);
+}
+
+.totais {
+    position: relative;
+    border: .3vw double black;
+    height: 17vw;
+    width: 12vw;
+    display: list-item;
+    padding-right: 10vw;
+    left: 11vw;
+    top: -55vw;
+}
+
+#proficiencia {
+    width: 2vw;
+    height: 2vw;
+    border: .3vw double var(--borda_color);
+    border-radius: 10vw;
+}
+
+#proficiencia_label{
+    position: relative;
+    font-size: 1.8vw;
+    left: 3vw;
+    top: -2.5vw;
+}
+
+.checkbox {
+    transform: rotate(45deg);
+    width: 1vw;
+    opacity: 0;
+    z-index: 9;
+}
+
+.checkmark{
+    position: absolute;
+    transform: rotate(45deg);
+    width: 1vw;
+    height: 1vw;
+    left: .25vw;
+    background-color: #ebeff0;
+    z-index: -2;
+}
+
+.checkbox:hover ~ .checkmark{
+    transition: 0.1s;
+    background-color: #dbdbdb;
+}
+
+.checkbox:checked ~ .checkmark{
+    background-color: #6558af;
+    box-shadow: .1vw .1vw 1.5vw .3vw #6558af;
+    border:  .1vw double black;
+}
+
+/*--------------------------  STATUS DE BATALHA ----------------------*/
+.HitPoints {
+    border: .05vw double black;
+    width: 20vw;
+    height: 18.45vw;
+    position: relative;
+    margin-left: 20vw;
+    background-image: url(../img/hpbackground.png);
+    background-size: 20vw;
+    background-repeat: no-repeat;
+}
+
+.HitPoints hr {
+    width: 30vw;
+    background-color: black;
+    border-style: double;
+}
+
+.HitPoints input,
+.input {
+    width: 2vw;
+    border: none;
+    text-align: center;
+}
+
+#ac {
+    position: relative;
+    top: 2.0vw;
+    left: 2.5vw;
+    width: 3vw;
+    height: 1.5vw;
+    border: .1vw double black;
+}
+
+#acAd {
+    position:absolute;
+    top: 0.1vw;
+    left:2.5vw;
+    outline: none;
+    width:3vw;
+    height: 1.3vw;   
+    text-align: center;
+}
+
+#acNat{
+    position:absolute;
+    top: 4.9vw;
+    left:2.6vw;
+    outline: none;
+    width:2vw; 
+    text-align: center;
+    background-color: transparent;
+}
+
+#iniciativa {
+    position: relative;
+    top: -1.5vw;
+    left: 9vw;
+}
+
+#Ofença {
+    position: relative;
+    top: 0.5vw;
+    left: 6.68vw;
+    background-color: #ffffff;
+}
+
+#DadoC {
+    position: relative;
+    top: -0.8vw;
+    left: 9.8vw;
+    width: 3vw;
+}
+
+#hpMax {
+    position: relative;
+    top: 5.75vw;
+    right: 0.47vw;
+}
+
+#hp {
+    position: relative;
+    top: 7.1vw;
+    left: 3.5vw;
+    width: 12vw;
+}
+
+#hpAd {
+    position: relative;
+    top: 10.1vw;
+    left: -4.5vw;
+}
+
+/*-------------------------- ARMAS  ----------------------*/
+.armas {
+    position: relative;
+    top: 40vw;
+}
+.armas input{
+    text-align: center;
+}
+#espada_icon{
+    width: 1vw;
+    height: 1vw;
+}
+
+/*-------------------------- ARMADURAS  ----------------------*/
+.armaduras{
+    position: relative;
+    top: 30vw;
+}
+
+.armaduras input{
+    text-align: center;
+}
+
+/* div arrastavél */
+
+.fixado {
+    position: fixed !important;
+    z-index: 9;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border: 3vw double rgb(0, 0, 0);
+    width: 80vw;
+    height: 80vw;
+    border-radius: 20vw;
+    background-image: url(../img/result_bckGrnd.png);
+    background-size: 80vw;
+    background-repeat: no-repeat;
+    line-height: 80vw;
+    font-size: xx-large;
+    top: 15vw !important;
+    right: 4vw !important;
+}
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border: .2vw double rgb(0, 0, 0);
+    width: 5vw;
+    height: 5vw;
+    border-radius: 1vw;
+    background-image: url(../img/result_bckGrnd.png);
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    line-height: 5vw;
+    font-size: xx-large;
+}
+
+#resultado {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: xx-large;
+    line-height: 5vw;
+    margin-top: 0vw;
+    border-radius: 1vw;
+    cursor: grab;
+    background-image: url(../img/result_bckGrnd.png);
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.fixo{
+    left: 70vw;
+    width: 10vw;
+    bottom: -80vw;
+    height: 02vw;
+    position:absolute;
+    cursor: pointer;
+    background-color: rgb(17, 17, 37);
+    color: white;
+    text-align: center;
+}
+
+#desfixar{
+    visibility: hidden;
+    background-color: rgb(78, 80, 95);
+}

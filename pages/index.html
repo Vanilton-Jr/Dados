@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d64eeea4e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>dados</title>
+</head>
+
+<body onload=" precisapMin()">
+    <!-- -------------STATUS-------------- -->
+    <div id="status">
+        <div class="statusBase">
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(1)" name="força" id="ForAdc" class="statusAdc">
+                <input type="number" onkeyup="AplicarProf(1)" name="força" id="força" class="statusSlt">
+                <p id="Formod" class="modifier"></p>
+                <img src="../img/estrela.png" alt="status base" id="estrela">
+                <div id="label_area">
+                    <label for="força" class="statusLabel">Força</label>
+                </div>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(2)" name="destreza" id="DesAdc" class="statusAdc">
+                <input type="number" onkeyup="AplicarProf(2)" name="destreza" id="destreza" class="statusSlt">
+                <p id="Desmod" class="modifier"></p>
+                <img src="../img/estrela.png" alt="status base" id="estrela">
+                <div id="label_area">
+                    <label for="destreza" class="statusLabel">Destreza</label>
+                </div>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(3)" name="vitalidade" id="VitAdc" class="statusAdc">
+                <input type="number" onkeyup="AplicarProf(3)" name="vitalidade" id="vitalidade" class="statusSlt">
+                <p id="Vitmod" class="modifier"></p>
+                <img src="../img/estrela.png" alt="status base" id="estrela">
+                <div id="label_area">
+                    <label for="vitalidade" class="statusLabel">Vitalidade</label>
+                </div>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(4)" name="saber" id="SabAdc" class="statusAdc">
+                <input type="number" onkeyup="AplicarProf(4)" name="saber" id="saber" class="statusSlt">
+                <p id="Sabmod" class="modifier"></p>
+                <img src="../img/estrela.png" alt="status base" id="estrela">
+                <div id="label_area">
+                    <label for="saber" class="statusLabel"> Saber </label>
+                </div>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(5)" name="carisma" id="CarAdc" class="statusAdc">
+                <input type="number" onkeyup="AplicarProf(5)" name="carisma" id="carisma" class="statusSlt">
+                <p id="Carmod" class="modifier"></p>
+                <img src="../img/estrela.png" alt="status base" id="estrela">
+                <div id="label_area">
+                    <label for="carisma" class="statusLabel">Carisma</label>
+                </div>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(6)" name="sorte" id="SorAdc" class="statusAdc">
+                <input type="number" onkeyup="AplicarProf(6)" name="sorte" id="sorte" class="statusSlt">
+                <p id="Sormod" class="modifier"></p>
+                <img src="../img/estrela.png" alt="status base" id="estrela">
+                <div id="label_area">
+                    <label for="sorte" class="statusLabel"> Sorte </label>
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------Totais---------- -->
+        <div class="totais">
+            <input type="number" id="proficiencia"> <label for="proficiencia"
+                id="proficiencia_label">Proficiência</label>
+
+            <div class="resultadofinaldostatu">
+                <div>
+                    <input type="checkbox" onclick="AplicarProf(1)" class="checkbox" id="Forprof">
+                    <span class="checkmark"></span>
+                </div>
+                <p class="statuFinal" id="ForFinal"></p>
+                <p class="statusLabelF">Força</p>
+                <p class="buttonDice" onclick="d20M(1)"> <i class="fa fa-solid fa-dice-d20"></i></p>
+            </div><br>
+
+            <div class="resultadofinaldostatu">
+                <div>
+                    <input type="checkbox" onclick="AplicarProf(2)" class="checkbox" id="Desprof">
+                    <span class="checkmark"></span>
+                </div>
+                <p class="statuFinal" id="DesFinal"></p>
+                <p class="statusLabelF">Destresa</p>
+                <p class="buttonDice" onclick="d20M(2)"> <i class="fa fa-solid fa-dice-d20"></i></p>
+            </div></br>
+
+            <div class="resultadofinaldostatu">
+                <div>
+                    <input type="checkbox" onclick="AplicarProf(3)" class="checkbox" id="Vitprof">
+                    <span class="checkmark"></span>
+                </div>
+                <p class="statuFinal" id="VitFinal"> </p>
+                <p class="statusLabelF">Vitalidade</p>
+                <p class="buttonDice" onclick="d20M(3)"><i class="fa fa-solid fa-dice-d20"></i></p>
+            </div><br>
+
+            <div class="resultadofinaldostatu">
+                <div>
+                    <input type="checkbox" onclick="AplicarProf(4)" class="checkbox" id="Sabprof">
+                    <span class="checkmark"></span>
+                </div>
+                <p class="statuFinal" id="SabFinal"></p>
+                <p class="statusLabelF">Saber</p>
+                <p class="buttonDice" onclick="d20M(4)"><i class="fa fa-solid fa-dice-d20"></i></p>
+            </div><br>
+
+            <div class="resultadofinaldostatu">
+                <div>
+                    <input type="checkbox" onclick="AplicarProf(5)" class="checkbox" id="Carprof">
+                    <span class="checkmark"></span>
+                </div>
+                <p class="statuFinal" id="CarFinal"></p>
+                <p class="statusLabelF">Carisma</p>
+                <p class="buttonDice" onclick="d20M(5)"><i class="fa fa-solid fa-dice-d20"></i></p>
+            </div><br>
+
+            <div class="resultadofinaldostatu">
+                <div>
+                    <input type="checkbox" onclick="AplicarProf(6)" class="checkbox" id="Sorprof">
+                    <span class="checkmark"></span>
+                </div>
+                <p class="statuFinal" id="SorFinal"></p>
+                <p class="statusLabelF">Sorte</p>
+                <p class="buttonDice" onclick="d20M(6)"><i class="fa fa-solid fa-dice-d20"></i></p>
+            </div><br>
+        </div>
+    </div>
+    <!-- -------------Armas-------------- -->
+    <div class="armas">
+        <div id="arma1" class="arma">
+            <input type="checkbox" id="profArma1" class="profArma"> <input placeholder="Arma Primária" type="text"
+                id="arma1Nome" class="armaNome">
+            <input type="number" min="???" placeholder="Insira bônus de" id="arma1Prec" class="armaPrec">
+            <select class="Dano" id="Dano1">
+                <option value="6">d6</option>
+                <option value="8">d8</option>
+                <option value="12">d12</option>
+                <option value="20">d20</option>
+            </select>
+            <select class="Tipo" id="Tipo1">
+                <option value="For">Força</option>
+                <option value="Des">Destreza</option>
+            </select> <input placeholder="Efeito" type="text" id="arma1Efeito" class="armaEfeito"> <button id="precBut1"
+                class="ArmaButton" onclick="Precisao(1)"><i class="fa fa-solid fa-crosshairs"></i></button> <button
+                id="danoBut1" class="ArmaButton" onclick="Dano(1)"><img src="../img/sword.png"
+                    id="espada_icon"></button>
+        </div>
+
+        <div id="arma2" class="arma">
+            <input type="checkbox" id="profArma2" class="profArma"> <input placeholder="Arma Secundário" type="text"
+                id="arma2Nome" class="armaNome">
+            <input type="number" placeholder="precisão caso" min="???" id="arma2Prec" class="armaPrec">
+            <select class="Dano" id="Dano2">
+                <option value="6">d6</option>
+                <option value="8">d8</option>
+                <option value="12">d12</option>
+                <option value="20">d20</option>
+            </select>
+            <select class="Tipo" id="Tipo2">
+                <option value="For">Força</option>
+                <option value="Des">Destreza</option>
+            </select> <input placeholder="Efeito" type="text" id="arma2Efeito" class="armaEfeito"> <button id="precBut2"
+                class="ArmaButton" onclick="Precisao(2)"><i class="fa fa-solid fa-crosshairs"></i></button> <button
+                id="danoBut2" class="ArmaButton" onclick="Dano(2)"><img src="../img/sword.png"
+                    id="espada_icon"></button>
+        </div>
+
+        <div id="arma3" class="arma">
+            <input type="checkbox" id="profArma3" class="profArma"> <input placeholder="Arma de Arremesso" type="text"
+                id="arma3Nome" class="armaNome">
+            <input type="number" placeholder="tenha" id="arma3Prec" class="armaPrec">
+            <select class="Dano" id="Dano3">
+                <option value="6">d6</option>
+                <option value="8">d8</option>
+                <option value="12">d12</option>
+                <option value="20">d20</option>
+            </select>
+            <select class="Tipo" id="Tipo3">
+                <option value="For">Força</option>
+                <option value="Des">Destreza</option>
+            </select> <input placeholder="Efeito" type="text" id="arma3Efeito" class="armaEfeito"> <button id="precBut3"
+                class="ArmaButton" onclick="Precisao(3)"> <i class="fa fa-solid fa-crosshairs"></i> </button> <button
+                id="danoBut3" class="ArmaButton" onclick="Dano(3)"><img src="../img/sword.png"
+                    id="espada_icon"></button>
+        </div>
+    </div>
+
+    <!-- -------------Armadura---------------->
+    <div class="armaduras">
+        <div id="armadura1" class="armadura">
+            <input placeholder="Elmo" type="text" id="armadura1Nome" class="armaduraNome">
+            <input placeholder="AC" type="number" onkeyup="DefinirAc()" id="armadura1Def" class="armaduraDef">
+            <input placeholder="Peso" type="number" onkeyup="peso()" id="armadura1Peso" class="armaduraPeso">
+            <input placeholder="Efeito" type="text" id="armadura1Efeito" class="armaduraEfeito">
+        </div>
+        <div id="armadura2" class="armadura">
+            <input placeholder="Peitoral" type="text" id="armadura2Nome" class="armaduraNome">
+            <input placeholder="AC" type="number" onkeyup="DefinirAc()" id="armadura2Def" class="armaduraDef">
+            <input placeholder="Peso" type="number" onkeyup="peso()" id="armadura2Peso" class="armaduraPeso">
+            <input placeholder="Efeito" type="text" id="armadura2Efeito" class="armaduraEfeito">
+        </div>
+    </div>
+    <!-- --------------HP-------------- -->
+    <Div class="HitPoints">
+        <p class="input" id="ac"></p>
+        <p class="input" id="acAd"></p> <input onkeyup="DefinirAc()" type="Number" id="acNat">
+        <input type="number" id="iniciativa"> <input type="number" id="Ofença">
+        <select class="input" id="DadoC">
+            <option value="6">d6</option>
+            <option value="8">d8</option>
+            <option value="12">d12</option>
+            <option value="20">d20</option>
+        </select>
+
+        <input onkeyup="damageControl()" type="number" id="hpMax">
+
+        <input onkeyup="damageControl()" min="0" type="number" id="hp">
+
+        <input type="number" id="hpAd">
+
+    </Div>
+    <!-- -------------DADOS-------------- -->
+    <div class="dados">
+        <div id="d20Body">
+            <img class="dice" src="../img/d20B.png" id="d20" onclick="droll(20)">
+            <div onclick="droll(20)" class="labeld" id="labeld20" onmouseenter="diceHoverin(20)"
+                onmouseleave="diceHoverout(20)"></div>
+            <!-- <img src="../img/rolling.gif" alt="d20" class="dice_rolling" id="gif20" onclick="droll(20)"> -->
+            <p type="text" class="dice_text" id="d20_text"></p>
+        </div>
+
+        <div id="dIBody">
+            <img class="dice" src="../img/d20B.png" id="dI" onclick="drollP()">
+            <div onclick="drollP()" class="labeld" id="labeldI" onmouseenter="diceHoverin('I')"
+                onmouseleave="diceHoverout('I')"></div>
+            <p type="text" class="dice_text" id="dI_text"></p>
+            <input placeholder="?" type="number" id="N_personalizado">
+        </div>
+        <!-- Divi arrastavél/Resultado -->
+        <div id="mydiv" onmousedown="grab('mydiv')">
+            <p id="resultado"></p>
+            <img src="../img/rolling.gif" class="dice_rolling" id="gif">
+        </div>
+    </div>
+
+    <div id="fixar" onclick="FixarResultado()" class="fixo">
+        <p>Fixar Resultado</p>
+    </div>
+    <div id="desfixar" onclick="DesFixarResultado()" class="fixo">Desfixar Resultado</div>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        //AÇÃO DO DADO         
+        function droll(d) {
+            var dice_text = document.getElementById(`d${d}_text`);
+            var dado = document.getElementById(`d${d}`);
+            var label = document.getElementById(`labeld${d}`);
+
+            dice_text.style.visibility = "hidden";//Torrne o texto invisível
+            Roll = Math.floor(Math.random() * d) + 1;//selecione um número aleatóirio entre 1 e "d"
+            dice_text.innerHTML = Roll;//expresse o o n. aleatório resultante no espaço do dado
+
+            gif()
+
+            setTimeout(function () { dice_text.style.visibility = "visible" }, 2000);//torne o texto visivél após um tempo derteminado.
+            var result = document.getElementById("resultado").innerText = Roll;//expresse o o n. aleatório resultante no espaço do resultado final
+            dado.classList.add("rotation"); //girar o dado
+            label.classList.add("ativado"); //mudar o src do label para o label ativado
+            setTimeout(function () { dado.classList.remove("rotation") }, 2000); //Pare o dado após um tempo derteminado
+            setTimeout(function () { label.classList.remove("ativado") }, 2000); //mudar o src do label ativado para o label
+        }
+
+        function drollP() {
+            var N = document.getElementById("N_personalizado").value;
+            var dice_text = document.getElementById(`dI_text`);
+            var dado = document.getElementById(`dI`);
+            var label = document.getElementById(`labeldI`);
+
+            dice_text.style.visibility = "hidden";//Torrne o texto invisível
+            Roll = Math.floor(Math.random() * N) + 1;//selecione um número aleatóirio entre 1 e "d"
+            dice_text.innerHTML = Roll;//expresse o o n. aleatório resultante no espaço do dado
+
+            gif()
+            setTimeout(function () { dice_text.style.visibility = "visible" }, 2000);//torne o texto visivél após um tempo derteminado.
+            var result = document.getElementById("resultado").innerText = Roll;//expresse o o n. aleatório resultante no espaço do resultado final
+            dado.classList.add("rotation"); //girar o dado
+            label.classList.add("ativado"); //mudar o src do label para o label ativado
+            setTimeout(function () { dado.classList.remove("rotation") }, 2000); //Pare o dado após um tempo derteminado
+            setTimeout(function () { label.classList.remove("ativado") }, 2000); //mudar o src do label ativado para o label
+        }
+
+        function gif() {
+            document.getElementById(`gif`).style.visibility = "visible"  //torne a animação visível
+            setTimeout(function () { document.getElementById(`gif`).style.visibility = "hidden" }, 2000);  //torne a animação invisivél após um tempo derteminado.
+        }
+
+        function diceHoverin(d) {
+            var dice_text = document.getElementById(`d_text`);
+            var label = document.getElementById(`labeld${d}`);
+            label.style.backgroundImage = `url(../img/d20laveloNB.png)`;
+            dice_text.style.bottom = "14.15vw"
+
+        }
+        function diceHoverout(d) {
+            var dice_text = document.getElementById(`d${d}_text`);
+            var label = document.getElementById(`labeld${d}`);
+            label.style.backgroundImage = `url(../img/d20.png)`;
+            dice_text.style.bottom = "13.9vw"
+        }
+        function Mod(s, id) {
+            droll(20);
+            proficiencia(s, id)
+        }
+
+
+        function proficiencia(s, id) {
+            var prof = document.getElementById("proficiência").value * 1;
+            var Adc = document.getElementById(`${id}Adc`).value * 1;
+            var check = document.getElementById(`${id}prof`);
+            var Dmod = Math.round((s - 10) / 2);
+            var modMadc = Dmod + Adc;
+            var result = document.getElementById("resultado");
+
+            if (modMadc > 0) {
+                document.getElementById(`${id}mod`).innerHTML = "" + modMadc;
+            }
+            else {
+                var final = document.getElementById(`${id}mod`).innerHTML = modMadc;
+            }
+            if (check.checked == true) {
+                var final = modMadc + prof;
+                if (final > 0) {
+                    document.getElementById(`${id}Final`).innerHTML = "+" + final;
+                }
+                else {
+                    document.getElementById(`${id}Final`).innerHTML = final;
+                }
+            }
+            else {
+                var final = modMadc;
+                if (final > 0) {
+                    document.getElementById(`${id}Final`).innerHTML = "+" + final;
+                }
+                else {
+                    document.getElementById(`${id}Final`).innerHTML = final;
+                }
+            }
+            result.innerText = final + Roll;
+        }
+
+        function peso() {
+            var peso1 = document.getElementById("armadura1Peso");
+            var peso2 = document.getElementById("armadura2Peso");
+            var For = document.getElementById("força").value;
+
+            if (peso1.value > (For / 2)) {
+                peso1.style.color = "red"
+            }
+            else {
+                peso1.style.color = "black"
+            }
+
+            if (peso2.value > (For / 2)) {
+                peso2.style.color = "red"
+            }
+            else {
+                peso2.style.color = "black"
+            }
+        }
+
+        function AplicarProf(n) {
+            var For = document.getElementById("força").value;
+            var Des = document.getElementById("destreza").value;
+            var Vit = document.getElementById("vitalidade").value;
+            var Sab = document.getElementById("saber").value;
+            var Car = document.getElementById("carisma").value;
+            var Sor = document.getElementById("sorte").value;
+
+
+            if (n == 1) {
+                proficiencia(For, "For")
+            }
+            if (n == 2) {
+                proficiencia(Des, "Des")
+            }
+            if (n == 3) {
+                proficiencia(Vit, "Vit")
+            }
+            if (n == 4) {
+                proficiencia(Sab, "Sab")
+            }
+            if (n == 5) {
+                proficiencia(Car, "Car")
+            }
+            if (n == 6) {
+                proficiencia(Sor, "Sor")
+            }
+        }
+
+        function d20M(n) {
+            var For = document.getElementById("força").value;
+            var Des = document.getElementById("destreza").value;
+            var Vit = document.getElementById("vitalidade").value;
+            var Sab = document.getElementById("saber").value;
+            var Car = document.getElementById("carisma").value;
+            var Sor = document.getElementById("sorte").value;
+
+
+            if (n == 1) {
+                Mod(For, "For")
+            }
+            if (n == 2) {
+                Mod(Des, "Des")
+            }
+            if (n == 3) {
+                Mod(Vit, "Vit")
+            }
+            if (n == 4) {
+                Mod(Sab, "Sab")
+            }
+            if (n == 5) {
+                Mod(Car, "Car")
+            }
+            if (n == 6) {
+                Mod(Sor, "Sor")
+            }
+        }
+
+        function DefinirAc() {
+            var ac1 = document.getElementById("armadura1Def").value;
+            var ac2 = document.getElementById("armadura2Def").value;
+            var acNat = document.getElementById("acNat").value;
+            var acAd = document.getElementById("acAd");
+            var ac = document.getElementById("ac");
+            acAd.innerText = (ac1 * 1) + (ac2 * 1);
+            ac.innerHTML = (acNat * 1) + (acAd.innerHTML * 1);
+        }
+
+        function Precisao(n) {
+            var result = document.getElementById("resultado");
+            var defPrec = document.getElementById(`Tipo${n}`).value;
+            var bonus = document.getElementById(`arma${n}Prec`).value;
+            var Formod = document.getElementById("ForFinal").innerHTML * 1;
+            var Desmod = document.getElementById("DesFinal").innerHTML * 1;
+
+            droll(20)
+
+            if (defPrec == "For") {
+                var mod = Formod * 1;
+            }
+            else if (defPrec == "Des") {
+                var mod = Desmod * 1;
+            }
+
+            result.innerHTML = bonus * 1 + mod * 1 + Roll * 1;
+        }
+
+        function Dano(n) {
+            var prof = document.getElementById("proficiência").value * 1;
+            var result = document.getElementById("resultado");
+            var cru = document.getElementById("dadocru");
+            var checkbox = document.getElementById(`profArma${n}`);
+            var dano = document.getElementById(`Dano${n}`).value;
+            var rroll = 0;
+            gif()
+            if (checkbox.checked == true) {
+                if (dano == 20) {
+                    droll(dano);
+                    result.innerHTML = prof + Roll;
+                }
+                else {
+                    rroll = Math.floor(Math.random() * dano) + 1;
+                    result.innerHTML = prof + rroll;
+                }
+
+
+            }
+            else {
+                if (dano == 20) {
+                    droll(dano);
+                    result.innerHTML = Roll;
+                }
+                if (dano == 8) {
+                    result.innerHTML = Math.floor(Math.random() * 8) + 1;
+                }
+                else {
+                    rroll = Math.floor(Math.random() * dano) + 1;
+                    result.innerHTML = rroll;
+                }
+            }
+
+        }
+        function damageControl() {
+            var hpmax = document.getElementById("hpMax").value * 1;
+            var hp = document.getElementById("hp");
+            var limite = hpmax * 1;
+
+            if ((hp.value * 1) >= (hpmax + 1)) {
+                hp.value = limite * 1;
+            }
+
+        }
+
+        function grab(id) {
+            var elemento = document.getElementById(`${id}`);
+            elemento.style.cursor = "grabbing";
+        }
+        // Div arrastavél
+        dragElement(document.getElementById("mydiv"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+
+        function FixarResultado() {
+            var resultbox = document.getElementById("mydiv");
+            var fixar = document.getElementById("fixar");
+            var desfixar = document.getElementById("desfixar");
+
+            desfixar.style.visibility = "visible"
+            fixar.style.visibility = "hidden"
+            resultbox.classList.add("fixado");
+        }
+        function DesFixarResultado() {
+            var resultbox = document.getElementById("mydiv");
+            var fixar = document.getElementById("fixar");
+            var desfixar = document.getElementById("desfixar");
+
+            fixar.style.visibility = "visible";
+            desfixar.style.visibility = "hidden";
+
+            resultbox.classList.remove("fixado");
+        }
+    </script>
+</body>
+
+</html>

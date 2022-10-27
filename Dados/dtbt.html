@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d64eeea4e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Destribuidora</title>
+</head>
+
+<body>
+    <div id="status">
+        <div class="statusBase">
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(1)" name="força" id="ForAdc" class="statusAdc">
+                <input type="number" min="8" max="15" onkeyup="AplicarProf(1)" name="força" id="força"
+                    class="statusSlt">
+                <p id="Formod" class="modifier"></p>
+                <img src="img/estrela.png" alt="status base" id="estrela">
+                <label for="força" class="statusLabel">Força</label>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(2)" name="destreza" id="DesAdc" class="statusAdc">
+                <input type="number" min="8" max="15" onkeyup="AplicarProf(2)" name="destreza" id="destreza"
+                    class="statusSlt">
+                <p id="Desmod" class="modifier"></p>
+                <img src="img/estrela.png" alt="status base" id="estrela">
+                <label for="destreza" class="statusLabel">Destreza</label>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(3)" name="vitalidade" id="VitAdc" class="statusAdc">
+                <input type="number" min="8" max="15" onkeyup="AplicarProf(3)" name="vitalidade" id="vitalidade"
+                    class="statusSlt">
+                <p id="Vitmod" class="modifier"></p>
+                <img src="img/estrela.png" alt="status base" id="estrela">
+                <label for="vitalidade" class="statusLabel">Vitalidade</label>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(4)" name="saber" id="SabAdc" class="statusAdc">
+                <input type="number" min="8" max="15" onkeyup="AplicarProf(4)" name="saber" id="saber"
+                    class="statusSlt">
+                <p id="Sabmod" class="modifier"></p>
+                <img src="img/estrela.png" alt="status base" id="estrela">
+                <label for="saber" class="statusLabel">Saber</label>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(5)" name="carisma" id="CarAdc" class="statusAdc">
+                <input type="number" min="8" max="15" onkeyup="AplicarProf(5)" name="carisma" id="carisma"
+                    class="statusSlt">
+                <p id="Carmod" class="modifier"></p>
+                <img src="img/estrela.png" alt="status base" id="estrela">
+                <label for="carisma" class="statusLabel">Carisma</label>
+            </div>
+
+            <div class="statusI">
+                <input type="number" onkeyup="AplicarProf(6)" name="sorte" id="SorAdc" class="statusAdc">
+                <input type="number" min="8" max="15" onkeyup="AplicarProf(6)" name="sorte" id="sorte"
+                    class="statusSlt">
+                <p id="Sormod" class="modifier"></p>
+                <img src="img/estrela.png" alt="status base" id="estrela">
+                <label for="sorte" class="statusLabel">Sorte</label>
+            </div>
+            <div id="tela">
+                <input onkeyup="calculo()" type="number" id="MaxPoints">
+                <p id="AtualPoints"></p>
+            </div>
+            <img src="img/standard.png" id="standard" alt="">
+        </div>
+
+        <style>
+            body {
+                font-size: 12px;
+            }
+
+            #AtualPoints {
+                background-color: azure;
+                width: 50px;
+                height: 20px;
+            }
+
+            #tela {
+                position: fixed;
+                left: 500px;
+                top: 50px;
+                text-align: center;
+                font-size: 20px;
+                z-index: 100;
+            }
+
+            #standard {
+                position: relative;
+                left: 500px;
+                bottom: 800px;
+            }
+        </style>
+
+        <script>
+
+            var For = document.getElementById("força").value = 8;
+            var Des = document.getElementById("destreza").value = 8;
+            var Vit = document.getElementById("vitalidade").value = 8;
+            var Sab = document.getElementById("saber").value = 8;
+            var Car = document.getElementById("carisma").value = 8;
+            var Sor = document.getElementById("sorte").value = 8;
+
+            function calculo() {
+                var For = document.getElementById("força").value - 8;
+                var Des = document.getElementById("destreza").value - 8;
+                var Vit = document.getElementById("vitalidade").value - 8;
+                var Sab = document.getElementById("saber").value - 8;
+                var Car = document.getElementById("carisma").value - 8;
+                var Sor = document.getElementById("sorte").value - 8;
+
+                var Max = document.getElementById("MaxPoints").value;
+                var atual = document.getElementById("AtualPoints");
+
+                atual.innerHTML = Max - For - Des - Vit - Sab - Car - Sor;
+
+                if (atual.innerHTML <= 0) {
+                    atual.style.color = "red"
+                }
+                else {
+                    atual.style.color = "black"
+                }
+            }
+
+
+            function proficiencia(s, id) {
+                var Adc = document.getElementById(`${id}Adc`).value * 1;
+                var Dmod = Math.round((s - 10) / 2);
+                var modMadc = Dmod + Adc;
+
+                if (modMadc > 0) {
+                    document.getElementById(`${id}mod`).innerHTML = "+" + modMadc;
+                }
+                else {
+                    var final = document.getElementById(`${id}mod`).innerHTML = modMadc;
+                }
+                calculo()
+
+            }
+
+            function AplicarProf(n) {
+                var For = document.getElementById("força").value;
+                var Des = document.getElementById("destreza").value;
+                var Vit = document.getElementById("vitalidade").value;
+                var Sab = document.getElementById("saber").value;
+                var Car = document.getElementById("carisma").value;
+                var Sor = document.getElementById("sorte").value;
+
+
+                if (n == 1) {
+                    proficiencia(For, "For")
+                }
+                if (n == 2) {
+                    proficiencia(Des, "Des")
+                }
+                if (n == 3) {
+                    proficiencia(Vit, "Vit")
+                }
+                if (n == 4) {
+                    proficiencia(Sab, "Sab")
+                }
+                if (n == 5) {
+                    proficiencia(Car, "Car")
+                }
+                if (n == 6) {
+                    proficiencia(Sor, "Sor")
+                }
+            }
+        </script>
+</body>
+
+</html>
