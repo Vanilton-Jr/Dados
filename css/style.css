@@ -18,6 +18,8 @@ body {
   }
 input {
     outline: none;
+    font-family: antiga;
+
 }
 
 button{
@@ -140,9 +142,10 @@ button{
 }
 
 .statusBase{
-    border: .1vw double black;
+    border: .2vw double var(--borda_color);
     width: 10vw;
     height: 55vw;
+    padding: -1vw;
 }
 
 .statusI{
@@ -153,15 +156,15 @@ button{
 }
 
 .modifier {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(219, 194, 145);
     width: 5vw;
     height: 4vw;
+    border: .3vw double var(--borda_color);
     border-radius: 100%;
-    border: black .2vw double;
     border-bottom: transparent;
     text-align: center;
-    padding-top: 1vw;
-    font-size: xx-large;
+    padding-top: 1.5vw;
+    font-size: 2vw;
 }
 
 #estrela {
@@ -174,15 +177,16 @@ button{
 
 .statusSlt {
     position: relative;
-    width: 2vw;
+    width: 1vw;
     height: 0.9vw;
-    top: 8vw;
-    left: -1.1vw;
-    font-size: xx-small;
+    top: 8.6vw;
+    left: -1.23vw;
+    font-size:  1vw;
     z-index: 2;
     border: none;
     background-color: transparent;
     overflow: hidden;
+    text-align: center;
 }
 
 .statusAdc {
@@ -191,8 +195,8 @@ button{
     height: 1vw;
     border-radius: 100%;
     top: 3.5vw;
-    left: 1.2vw;
-    font-size: xx-small;
+    left: 1.3vw;
+    font-size: 1.2vw;
     z-index: 2;
     text-align: center;
     outline: none;
@@ -224,10 +228,10 @@ input::-webkit-inner-spin-button {
     margin-top: 0.5vw;
 }
 
-#proficiência{
-    width: 8vw !important;
-    height: 2vw !important;
-    margin-left: 10vw;
+#proficiencia{
+    width: 2vw;
+    height: 2vw;
+    text-align: center;
 }
 
 .statuFinal{
@@ -302,19 +306,20 @@ input::-webkit-inner-spin-button {
     width: 1vw;
     height: 1vw;
     left: .25vw;
-    background-color: #ebeff0;
+    background-color: #dbdbdb;
     z-index: -2;
+    border:  .1vw double black;
 }
 
 .checkbox:hover ~ .checkmark{
     transition: 0.1s;
-    background-color: #dbdbdb;
+    background-color: #ebeff0;
 }
 
 .checkbox:checked ~ .checkmark{
+    border:  none;
     background-color: #6558af;
     box-shadow: .1vw .1vw 1.5vw .3vw #6558af;
-    border:  .1vw double black;
 }
 
 /*--------------------------  STATUS DE BATALHA ----------------------*/
@@ -323,10 +328,11 @@ input::-webkit-inner-spin-button {
     width: 20vw;
     height: 18.45vw;
     position: relative;
-    margin-left: 20vw;
     background-image: url(../img/hpbackground.png);
     background-size: 20vw;
     background-repeat: no-repeat;
+    top: -63vw;
+    left: 35vw;
 }
 
 .HitPoints hr {

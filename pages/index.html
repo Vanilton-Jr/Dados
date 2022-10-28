@@ -16,7 +16,7 @@
         <div class="statusBase">
             <div class="statusI">
                 <input type="number" onkeyup="AplicarProf(1)" name="força" id="ForAdc" class="statusAdc">
-                <input type="number" onkeyup="AplicarProf(1)" name="força" id="força" class="statusSlt">
+                <input type="number"  onkeyup="AplicarProf(1)" name="força" id="força" class="statusSlt">
                 <p id="Formod" class="modifier"></p>
                 <img src="../img/estrela.png" alt="status base" id="estrela">
                 <div id="label_area">
@@ -57,7 +57,7 @@
             <div class="statusI">
                 <input type="number" onkeyup="AplicarProf(5)" name="carisma" id="CarAdc" class="statusAdc">
                 <input type="number" onkeyup="AplicarProf(5)" name="carisma" id="carisma" class="statusSlt">
-                <p id="Carmod" class="modifier"></p>
+                <p id="Carmod" onclick="AplicarProf(5)" class="modifier"></p>
                 <img src="../img/estrela.png" alt="status base" id="estrela">
                 <div id="label_area">
                     <label for="carisma" class="statusLabel">Carisma</label>
@@ -77,8 +77,8 @@
         </div>
         <!-- ---------Totais---------- -->
         <div class="totais">
-            <input type="number" id="proficiencia"> <label for="proficiencia"
-                id="proficiencia_label">Proficiência</label>
+            <input type="number" id="proficiencia">
+             <label for="proficiencia" id="proficiencia_label">proficiencia</label>
 
             <div class="resultadofinaldostatu">
                 <div>
@@ -216,6 +216,7 @@
             <input placeholder="Efeito" type="text" id="armadura2Efeito" class="armaduraEfeito">
         </div>
     </div>
+    
     <!-- --------------HP-------------- -->
     <Div class="HitPoints">
         <p class="input" id="ac"></p>
@@ -263,6 +264,7 @@
         <p>Fixar Resultado</p>
     </div>
     <div id="desfixar" onclick="DesFixarResultado()" class="fixo">Desfixar Resultado</div>
+
     <script>
         function allowDrop(ev) {
             ev.preventDefault();
@@ -277,6 +279,7 @@
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
         }
+
         //AÇÃO DO DADO         
         function droll(d) {
             var dice_text = document.getElementById(`d${d}_text`);
@@ -334,22 +337,43 @@
             label.style.backgroundImage = `url(../img/d20.png)`;
             dice_text.style.bottom = "13.9vw"
         }
+
         function Mod(s, id) {
             droll(20);
             proficiencia(s, id)
         }
 
+        
+        function peso() {
+            var peso1 = document.getElementById("armadura1Peso");
+            var peso2 = document.getElementById("armadura2Peso");
+            var For = document.getElementById("força").value;
+
+            if (peso1.value > (For / 2)) {
+                peso1.style.color = "red"
+            }
+            else {
+                peso1.style.color = "black"
+            }
+
+            if (peso2.value > (For / 2)) {
+                peso2.style.color = "red"
+            }
+            else {
+                peso2.style.color = "black"
+            }
+        }
 
         function proficiencia(s, id) {
-            var prof = document.getElementById("proficiência").value * 1;
+            var prof = document.getElementById("proficiencia").value * 1;
             var Adc = document.getElementById(`${id}Adc`).value * 1;
             var check = document.getElementById(`${id}prof`);
             var Dmod = Math.round((s - 10) / 2);
             var modMadc = Dmod + Adc;
             var result = document.getElementById("resultado");
-
+           
             if (modMadc > 0) {
-                document.getElementById(`${id}mod`).innerHTML = "" + modMadc;
+                document.getElementById(`${id}mod`).innerHTML = "+" + modMadc;
             }
             else {
                 var final = document.getElementById(`${id}mod`).innerHTML = modMadc;
@@ -373,26 +397,6 @@
                 }
             }
             result.innerText = final + Roll;
-        }
-
-        function peso() {
-            var peso1 = document.getElementById("armadura1Peso");
-            var peso2 = document.getElementById("armadura2Peso");
-            var For = document.getElementById("força").value;
-
-            if (peso1.value > (For / 2)) {
-                peso1.style.color = "red"
-            }
-            else {
-                peso1.style.color = "black"
-            }
-
-            if (peso2.value > (For / 2)) {
-                peso2.style.color = "red"
-            }
-            else {
-                peso2.style.color = "black"
-            }
         }
 
         function AplicarProf(n) {
@@ -483,7 +487,7 @@
         }
 
         function Dano(n) {
-            var prof = document.getElementById("proficiência").value * 1;
+            var prof = document.getElementById("proficiencia").value * 1;
             var result = document.getElementById("resultado");
             var cru = document.getElementById("dadocru");
             var checkbox = document.getElementById(`profArma${n}`);
