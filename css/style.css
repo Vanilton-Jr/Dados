@@ -28,6 +28,7 @@ button{
 /* Dados */
 
 .dice {
+    top: -20vw;
     height: 20vw;
     width: 20vw;
     cursor: pointer;
@@ -258,7 +259,7 @@ input::-webkit-inner-spin-button {
     height: 1vw;
     color: rgb(130, 4, 4);
     cursor: pointer;
-    left: 4vw;
+    left: 5vw;
     bottom: 1.1vw;
 }
 
@@ -331,7 +332,7 @@ input::-webkit-inner-spin-button {
     background-image: url(../img/hpbackground.png);
     background-size: 20vw;
     background-repeat: no-repeat;
-    top: -62.9vw;
+    top: -65vw;
     left: 36vw;
     justify-items: center;
     color: aliceblue;
@@ -401,7 +402,7 @@ input::-webkit-inner-spin-button {
 
 #DadoC {
     position: relative;
-    top: -2.7vw;
+    top: -02.7vw;
     left: 9.8vw;
     width: 3vw;
     font-size: 1.2vw;
@@ -429,10 +430,13 @@ input::-webkit-inner-spin-button {
 /*-------------------------- ARMAS  ----------------------*/
 .armas {
     position: relative;
-    top: 40vw;
+    top: -35vw;
+    left: 35vw;
+    width: fit-content;
 }
 .armas input{
     text-align: center;
+    height: 1.3vw;
 }
 #espada_icon{
     width: 1vw;
@@ -442,7 +446,8 @@ input::-webkit-inner-spin-button {
 /*-------------------------- ARMADURAS  ----------------------*/
 .armaduras{
     position: relative;
-    top: 30vw;
+    top: -33vw;
+    left: 37vw;
 }
 
 .armaduras input{
