@@ -282,7 +282,7 @@ input::-webkit-inner-spin-button {
 #proficiencia {
     width: 2vw;
     height: 2vw;
-    border: .3vw double var(--borda_color);
+    border: .4vw double var(--borda_color);
     border-radius: 10vw;
 }
 
@@ -324,15 +324,17 @@ input::-webkit-inner-spin-button {
 
 /*--------------------------  STATUS DE BATALHA ----------------------*/
 .HitPoints {
-    border: .05vw double black;
+    border: .4vw double var(--borda_color);
     width: 20vw;
     height: 18.45vw;
     position: relative;
     background-image: url(../img/hpbackground.png);
     background-size: 20vw;
     background-repeat: no-repeat;
-    top: -63vw;
+    top: -62.9vw;
     left: 36vw;
+    justify-items: center;
+    color: aliceblue;
 }
 
 .HitPoints hr {
@@ -346,74 +348,82 @@ input::-webkit-inner-spin-button {
     width: 2vw;
     border: none;
     text-align: center;
+    background-color: transparent;
+    /* background-color: #6a2724; */
+    color: aliceblue;
+
 }
 
 #ac {
     position: relative;
-    top: 2.0vw;
+    top: .5vw;
     left: 2.5vw;
     width: 3vw;
     height: 1.5vw;
-    border: .1vw double black;
-}
-
-#acAd {
-    position:absolute;
-    top: 0.1vw;
-    left:2.5vw;
-    outline: none;
-    width:3vw;
-    height: 1.3vw;   
-    text-align: center;
+    font-size: 2vw;
 }
 
 #acNat{
     position:absolute;
-    top: 4.9vw;
-    left:2.6vw;
+    top: 1vw;
+    left:2.8vw;
     outline: none;
     width:2vw; 
     text-align: center;
     background-color: transparent;
+    font-size: 1.3vw;
+}
+
+#acAd {
+    position:absolute;
+    top: 3.6vw;
+    left:2.3vw;
+    outline: none;
+    width:3vw;
+    height: 1.3vw;   
+    text-align: center;
+    font-size: 1.3vw;
 }
 
 #iniciativa {
     position: relative;
-    top: -1.5vw;
-    left: 9vw;
+    top: -3.5vw;
+    left: 9.18vw;
+    font-size: 1.3vw;
 }
 
 #Ofença {
     position: relative;
-    top: 0.5vw;
-    left: 6.68vw;
-    background-color: #ffffff;
+    top: -1.2vw;
+    left: 6.6vw;
+    font-size: 1.3vw;
 }
 
 #DadoC {
     position: relative;
-    top: -0.8vw;
+    top: -2.7vw;
     left: 9.8vw;
     width: 3vw;
+    font-size: 1.2vw;
 }
 
 #hpMax {
     position: relative;
-    top: 5.75vw;
-    right: 0.47vw;
+    top: 4.1vw;
+    right: 0.37vw;
 }
 
 #hp {
     position: relative;
-    top: 7.1vw;
-    left: 3.5vw;
+    top: 5.2vw;
+    left: 3.6vw;
     width: 12vw;
 }
 
 #hpAd {
     position: relative;
-    top: 10.1vw;
-    left: -4.5vw;
+    top: 8.64vw;
+    left: -4vw;
 }
 
 /*-------------------------- ARMAS  ----------------------*/
