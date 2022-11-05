@@ -35,8 +35,10 @@ button{
 }
 
 .dados {
-    margin-top: 40vw;
+    position: relative;
     display: inline-flex;
+    top: -50vw;
+    left: 42vw;
 }
 
 .dice_text {
@@ -85,12 +87,13 @@ button{
     background-size: 15vw;
     margin-top: -20vw;
     background-image: url(../img/d20label.png);
-    width: 25vw;
-    height: 25vw;
+    width: 20vw;
+    height: 20vw;
     background-size: 20vw;
     cursor: pointer;
     transition: 0.01s;
     background-repeat: no-repeat;
+    border-radius: 100%;
 }
 
 .ativado {
@@ -99,13 +102,14 @@ button{
 }
 
 #d20Body {
-    border: black double 0.1vw;
-    width: 35vw;
+    width: 25vw;
+    height: fit-content;
 }
 
 #d6Body {
     border: black double 0.1vw;
     width: 35vw;
+    background-color: #6558af;
 }
 
 #N_personalizado{
@@ -113,8 +117,8 @@ button{
     width: 2.2vw;
     height: 1.5vw;
     background-color: white;
-    bottom: -73.21vw;
-    right: 51.4vw;
+    bottom: 14.7vw;
+    right: 8.2vw;
     transform: rotate(34deg);
     border: none;
     text-align: center;
@@ -325,17 +329,19 @@ input::-webkit-inner-spin-button {
 
 /*--------------------------  STATUS DE BATALHA ----------------------*/
 .HitPoints {
-    border: .4vw double var(--borda_color);
-    width: 20vw;
+    border: .4vw double black;
+    width: 60.4vw;
     height: 18.45vw;
     position: relative;
     background-image: url(../img/hpbackground.png);
     background-size: 20vw;
     background-repeat: no-repeat;
+    background-position: center;
     top: -65vw;
     left: 36vw;
     justify-items: center;
     color: aliceblue;
+    background-color: rgb(106, 39, 36);
 }
 
 .HitPoints hr {
@@ -352,13 +358,12 @@ input::-webkit-inner-spin-button {
     background-color: transparent;
     /* background-color: #6a2724; */
     color: aliceblue;
-
 }
 
 #ac {
     position: relative;
     top: .5vw;
-    left: 2.5vw;
+    left: 22.6vw;
     width: 3vw;
     height: 1.5vw;
     font-size: 2vw;
@@ -367,7 +372,7 @@ input::-webkit-inner-spin-button {
 #acNat{
     position:absolute;
     top: 1vw;
-    left:2.8vw;
+    left:23vw;
     outline: none;
     width:2vw; 
     text-align: center;
@@ -378,7 +383,7 @@ input::-webkit-inner-spin-button {
 #acAd {
     position:absolute;
     top: 3.6vw;
-    left:2.3vw;
+    left:22.6vw;
     outline: none;
     width:3vw;
     height: 1.3vw;   
@@ -389,21 +394,21 @@ input::-webkit-inner-spin-button {
 #iniciativa {
     position: relative;
     top: -3.5vw;
-    left: 9.18vw;
+    left: 29.48vw;
     font-size: 1.3vw;
 }
 
 #Ofença {
     position: relative;
     top: -1.2vw;
-    left: 6.6vw;
+    left: 26.8vw;
     font-size: 1.3vw;
 }
 
 #DadoC {
     position: relative;
     top: -02.7vw;
-    left: 9.8vw;
+    left: 30vw;
     width: 3vw;
     font-size: 1.2vw;
 }
@@ -411,20 +416,35 @@ input::-webkit-inner-spin-button {
 #hpMax {
     position: relative;
     top: 4.1vw;
-    right: 0.37vw;
+    right: -20.3vw;
 }
 
 #hp {
     position: relative;
-    top: 5.2vw;
-    left: 3.6vw;
+    top: 6.5vw;
+    left: 12.6vw;
     width: 12vw;
 }
 
 #hpAd {
     position: relative;
-    top: 8.64vw;
-    left: -4vw;
+    top: 9.9vw;
+    left: 4.9vw;
+}
+
+#hp_separdor{
+    position: absolute;
+    border: .3vw double black;
+    border-bottom: none;
+    border-top: none;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+    width: 20vw;
+    height: 18vw;
+    left: 20vw;
+    top: .2vw;
 }
 
 /*-------------------------- ARMAS  ----------------------*/
@@ -448,6 +468,8 @@ input::-webkit-inner-spin-button {
     position: relative;
     top: -33vw;
     left: 37vw;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
 }
 
 .armaduras input{
@@ -505,9 +527,9 @@ input::-webkit-inner-spin-button {
 }
 
 .fixo{
-    left: 70vw;
+    left: 86vw;
     width: 10vw;
-    bottom: -80vw;
+    bottom: -8vw;
     height: 02vw;
     position:absolute;
     cursor: pointer;

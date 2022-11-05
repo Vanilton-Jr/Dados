@@ -219,6 +219,7 @@
     
     <!-- --------------HP-------------- -->
     <Div class="HitPoints">
+        <div id="hp_separdor"></div>
         <p class="input" id="ac"></p>
         <p class="input" id="acAd"></p> <input onkeyup="DefinirAc()" type="Number" id="acNat">
         <input type="number" id="iniciativa"> <input type="number" id="Ofença">
@@ -234,7 +235,6 @@
         <input onkeyup="damageControl()" min="0" type="number" id="hp">
 
         <input type="number" id="hpAd">
-
     </Div>
     <!-- -------------DADOS-------------- -->
     <div class="dados">
@@ -253,6 +253,7 @@
             <p type="text" class="dice_text" id="dI_text"></p>
             <input placeholder="?" type="number" id="N_personalizado">
         </div>
+
         <!-- Divi arrastavél/Resultado -->
         <div id="mydiv" onmousedown="grab('mydiv')">
             <p id="resultado"></p>
